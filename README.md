@@ -1,3 +1,6 @@
+
+
+
 # AI Fire Escape Agent
 
 This project simulates an AI-based agent navigating and escaping a fire-spreading grid environment using multiple intelligent agent strategies.
@@ -31,20 +34,20 @@ A grid-based environment simulates spreading fire while intelligent agents must 
 
 ## Project Structure
 
-AI-Fire-Escape-Agent/
-├── agents/ # Agent classes
-├── env/ # Fire escape environment
-├── results/ # Saved Q-tables, outputs, animations
-├── train_q_agent.py # Q-learning batch trainer
-├── run_experiments.py # Experiment runner
-├── animate_agent_episode.py # Animation generator
-├── interactive_agent_comparison.py # Interactive results visualisation
-├── plot_success_curve.py # Success vs fire spread plot (optional)
-├── README.md # Project documentation
 
-yaml
-Copy
-Edit
+
+AI-Fire-Escape-Agent/
+├── agents/                            # Agent classes
+├── env/                               # Fire escape environment
+├── results/                           # Saved Q-tables, outputs, animations
+├── train\_q\_agent.py                   # Q-learning batch trainer
+├── run\_experiments.py                 # Experiment runner
+├── animate\_agent\_episode.py           # Animation generator
+├── interactive\_agent\_comparison.py    # Interactive results visualisation
+├── plot\_success\_curve.py              # Success vs fire spread plot (optional)
+├── README.md                          # Project documentation
+
+````
 
 ---
 
@@ -78,53 +81,67 @@ Edit
 
 ```bash
 python train_q_agent.py
+````
+
 This trains Q-learning agents across all grid and fire configurations.
 
-Running Experiments
-bash
-Copy
-Edit
-python run_experiments.py
-Runs experiments for all 3 agents and outputs results to results/agent_evaluation.csv.
+### Running Experiments
 
-Generating Animations
-bash
-Copy
-Edit
+```bash
+python run_experiments.py
+```
+
+Runs experiments for all 3 agents and outputs results to `results/agent_evaluation.csv`.
+
+### Generating Animations
+
+```bash
 python animate_agent_episode.py
+```
+
 Creates an animation showing an agent navigating the grid as fire spreads.
 
-Interactive Visualisation
-bash
-Copy
-Edit
+### Interactive Visualisation
+
+```bash
 python interactive_agent_comparison.py
+```
+
 Displays an interactive plot comparing success rates of all agents under different conditions.
 
-Results
+---
+
+## Results
+
 Results of experiments are stored in:
 
-bash
-Copy
-Edit
+```
 results/agent_evaluation.csv
+```
+
 Sample animation:
 
-bash
-Copy
-Edit
+```
 results/agent_manual_colors_10x10_fs03.gif
-Key Findings
-A Search Agent* performed best in small grid environments by finding guaranteed shortest paths.
+```
 
-Q-Learning Agent showed good generalisation but required extensive training episodes.
+---
 
-Reactive Agent underperformed due to simplistic rule set.
+## Key Findings
 
-Future Work
-Introduce diagonal movement options.
+* **A* Search Agent*\* performed best in small grid environments by finding guaranteed shortest paths.
+* **Q-Learning Agent** showed good generalisation but required extensive training episodes.
+* **Reactive Agent** underperformed due to simplistic rule set.
 
-Explore multi-agent cooperation strategies.
+---
 
-Test larger grid sizes and more complex obstacle layouts.
+## Future Work
+
+* Introduce diagonal movement options.
+* Explore multi-agent cooperation strategies.
+* Test larger grid sizes and more complex obstacle layouts.
+
+---
+
+
 
