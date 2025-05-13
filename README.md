@@ -1,163 +1,130 @@
-```markdown
-# AI Fire Escape Agent 🏃🔥
+# AI Fire Escape Agent
 
-A simulation project to evaluate the performance of intelligent agents navigating a building fire escape scenario under increasing environmental complexity.
+This project simulates an AI-based agent navigating and escaping a fire-spreading grid environment using multiple intelligent agent strategies.
 
-By [Atul Sunil](https://github.com/ATUL-SUNIL)
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Project Structure](#project-structure)
+3. [Technologies Used](#technologies-used)
+4. [Agents Implemented](#agents-implemented)
+5. [Usage Guide](#usage-guide)
+   - [Training Q-Learning Agent](#training-q-learning-agent)
+   - [Running Experiments](#running-experiments)
+   - [Generating Animations](#generating-animations)
+   - [Interactive Visualisation](#interactive-visualisation)
+6. [Results](#results)
+7. [Key Findings](#key-findings)
+8. [Future Work](#future-work)
 
 ---
 
-## 📝 Project Overview
+## Introduction
 
-This project explores the research question:
+This project investigates the research question:
 
-> **"How do different AI algorithms perform in fire escape scenarios with increasing complexity?"**
+**"How do different AI algorithms perform in fire escape scenarios with increasing complexity?"**
 
-I designed an agent-based simulation where:
-- Fire spreads dynamically across a grid-world
-- An agent must reach an exit without being trapped by fire
+A grid-based environment simulates spreading fire while intelligent agents must navigate toward an exit.
 
 ---
 
-## 💻 Technologies Used
+## Project Structure
+
+AI-Fire-Escape-Agent/
+├── agents/ # Agent classes
+├── env/ # Fire escape environment
+├── results/ # Saved Q-tables, outputs, animations
+├── train_q_agent.py # Q-learning batch trainer
+├── run_experiments.py # Experiment runner
+├── animate_agent_episode.py # Animation generator
+├── interactive_agent_comparison.py # Interactive results visualisation
+├── plot_success_curve.py # Success vs fire spread plot (optional)
+├── README.md # Project documentation
+
+yaml
+Copy
+Edit
+
+---
+
+## Technologies Used
 
 - Python 3.10+
 - Numpy
 - Matplotlib
 - Plotly
-- Custom grid environment + intelligent agents
+- Custom-built simulation environment
 
 ---
 
-## 🧠 Agents Implemented
+## Agents Implemented
 
-| Agent Type | Description |
-|------------|-------------|
-| **Reactive Agent** | Rule-based agent with simple movement rules |
-| **Search Agent** | A* search agent that computes shortest safe path |
-| **Q-Learning Agent** | Reinforcement learning agent trained over multiple episodes |
+### Reactive Agent
+- Simple rule-based movement toward closest exit.
+- Avoids immediate hazards.
 
-Agents were tested on multiple:
-- Grid sizes (`10x10`, `15x15`)
-- Fire spread rates (`0.1`, `0.3`, `0.5`)
+### Search Agent
+- Uses A* algorithm to find shortest safe path to exit.
 
----
-
-## 🏗️ Project Structure
-
-```
-
-AI-Fire-Escape-Agent/
-├── agents/                  # Agent classes
-├── env/                     # Fire escape environment
-├── results/                 # Q-tables, outputs, animations
-├── train\_q\_agent.py         # Q-learning batch trainer
-├── run\_experiments.py       # Main evaluation experiments
-├── animate\_agent\_episode.py # Episode animation generator
-├── interactive\_agent\_comparison.py # Interactive results plot
-├── plot\_success\_curve.py    # (Optional) success rate visualisation
-├── README.md                # Project documentation
-
-```
+### Q-Learning Agent
+- Model-free reinforcement learning agent trained over thousands of episodes to learn optimal escape behaviour.
 
 ---
 
-## 🚀 How to Run
+## Usage Guide
 
-1️⃣ Clone the repository:
-```
+### Training Q-Learning Agent
 
-git clone [git@github.com](mailto:git@github.com)\:ATUL-SUNIL/AI-Fire-Escape-Agent.git
-cd AI-Fire-Escape-Agent
+```bash
+python train_q_agent.py
+This trains Q-learning agents across all grid and fire configurations.
 
-```
+Running Experiments
+bash
+Copy
+Edit
+python run_experiments.py
+Runs experiments for all 3 agents and outputs results to results/agent_evaluation.csv.
 
-2️⃣ Install requirements:
-```
+Generating Animations
+bash
+Copy
+Edit
+python animate_agent_episode.py
+Creates an animation showing an agent navigating the grid as fire spreads.
 
-pip install numpy matplotlib plotly
+Interactive Visualisation
+bash
+Copy
+Edit
+python interactive_agent_comparison.py
+Displays an interactive plot comparing success rates of all agents under different conditions.
 
-```
+Results
+Results of experiments are stored in:
 
-3️⃣ Train Q-learning agents:
-```
+bash
+Copy
+Edit
+results/agent_evaluation.csv
+Sample animation:
 
-python train\_q\_agent.py
+bash
+Copy
+Edit
+results/agent_manual_colors_10x10_fs03.gif
+Key Findings
+A Search Agent* performed best in small grid environments by finding guaranteed shortest paths.
 
-```
+Q-Learning Agent showed good generalisation but required extensive training episodes.
 
-4️⃣ Run evaluation experiments:
-```
+Reactive Agent underperformed due to simplistic rule set.
 
-python run\_experiments.py
+Future Work
+Introduce diagonal movement options.
 
-```
+Explore multi-agent cooperation strategies.
 
-5️⃣ Generate visualizations:
-```
+Test larger grid sizes and more complex obstacle layouts.
 
-python animate\_agent\_episode.py
-python interactive\_agent\_comparison.py
-
-```
-
----
-
-## 🎥 Example Animation
-
-<img src="results/agent_manual_colors_10x10_fs03.gif" width="500"/>
-
-```
-
-results/agent\_manual\_colors\_10x10\_fs03.gif
-
-```
-
----
-
-## 📊 Example Results Plot
-
-Run:
-```
-
-python interactive\_agent\_comparison.py
-
-```
-
-Shows side-by-side success rates of all agents across grid sizes and fire spreads.
-
----
-
-## 💡 Key Findings
-
-- **Search Agent (A\*)** consistently performed best in small grids by guaranteeing shortest paths
-- **Q-Learning Agent** showed strong performance but suffered from incomplete exploration in limited training episodes
-- **Reactive Agent** performed worst due to simplistic rule set
-
----
-
-## 🎓 Coursework Reflection
-
-This project demonstrates:
-- Robust environment design
-- Comparison of classical search, reinforcement learning, and reactive AI approaches
-- Reproducibility and clear visual evaluation
-
-Developed under COMP3004 / COMP4105 - Designing Intelligent Agents module at University of Nottingham.
-
----
-
-## 📋 Future Work
-
-- Adding diagonal movement
-- Multi-agent cooperative escape strategies
-- Testing on larger dynamic grid environments
-
----
-
-## 📜 License
-
-This project was developed for educational and academic purposes only.
-```
-
----
