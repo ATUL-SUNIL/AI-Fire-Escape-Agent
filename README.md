@@ -47,7 +47,7 @@ AI-Fire-Escape-Agent/
 ├── plot\_success\_curve.py              # Success vs fire spread plot (optional)
 ├── README.md                          # Project documentation
 
-````
+
 
 ---
 
