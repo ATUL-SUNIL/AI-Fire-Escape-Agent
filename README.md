@@ -134,7 +134,7 @@ results/agent_manual_colors_10x10_fs03.gif
 * Introduce diagonal movement options.
 * Explore multi-agent cooperation strategies.
 * Test larger grid sizes and more complex obstacle layouts.
-
+* Introduce floor layouts and include building material knowledge for judging fire spread speed
 ---
 
 
