@@ -6,7 +6,7 @@ import matplotlib.patches as mpatches
 from env.fire_env import FireEscapeEnv
 from agents.q_learning_agent import QLearningAgent
 
-# === All configurations ===
+#  configurations 
 configs = [
     ((10, 10), 0.1),
     ((10, 10), 0.3),
@@ -16,7 +16,7 @@ configs = [
     ((15, 15), 0.5)
 ]
 
-# === Manual color map ===
+
 color_map = {
     0: [1, 1, 1],       # white = empty
     1: [0, 0, 0],       # black = wall
@@ -38,7 +38,7 @@ def grid_to_rgb(grid, agent_pos):
 def animate_one(grid_size, fire_spread):
     name = f"{grid_size[0]}x{grid_size[1]}_fs{int(fire_spread * 10):02}"
     q_table_path = f"results/q_{name}.pkl"
-    gif_path = f"results/agent_manual_colors_{name}.gif"
+    gif_path = f"results/agent_animation_{name}.gif"
 
     if not os.path.exists(q_table_path):
         print(f"❌ Skipping {name} — Q-table not found.")
