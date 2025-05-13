@@ -31,7 +31,7 @@ This project investigates the research question:
 A grid-based environment simulates spreading fire while intelligent agents must navigate toward an exit.
 
 ---
-
+```
 ## Project Structure
 
 AI-Fire-Escape-Agent/
@@ -44,7 +44,7 @@ AI-Fire-Escape-Agent/
 ├── interactive_agent_comparison.py # Interactive results visualisation
 ├── plot_success_curve.py # Success vs fire spread plot (optional)
 ├── README.md # Project documentation
-
+```
 ## Technologies Used
 
 - Python 3.10+
