@@ -34,22 +34,16 @@ A grid-based environment simulates spreading fire while intelligent agents must 
 
 ## Project Structure
 
-
-
 AI-Fire-Escape-Agent/
-├── agents/                            # Agent classes
-├── env/                               # Fire escape environment
-├── results/                           # Saved Q-tables, outputs, animations
-├── train\_q\_agent.py                   # Q-learning batch trainer
-├── run\_experiments.py                 # Experiment runner
-├── animate\_agent\_episode.py           # Animation generator
-├── interactive\_agent\_comparison.py    # Interactive results visualisation
-├── plot\_success\_curve.py              # Success vs fire spread plot (optional)
-├── README.md                          # Project documentation
-
-
-
----
+├── agents/ # Agent classes
+├── env/ # Fire escape environment
+├── results/ # Saved Q-tables, outputs, animations
+├── train_q_agent.py # Q-learning batch trainer
+├── run_experiments.py # Experiment runner
+├── animate_agent_episode.py # Animation generator
+├── interactive_agent_comparison.py # Interactive results visualisation
+├── plot_success_curve.py # Success vs fire spread plot (optional)
+├── README.md # Project documentation
 
 ## Technologies Used
 
