@@ -37,8 +37,8 @@ def train_q_agent(grid_size=(10, 10), fire_spread=0.3, episodes=100000):
 
     filename = f"results/q_{grid_size[0]}x{grid_size[1]}_fs{int(fire_spread * 10):02}.pkl"
     agent.save_q_table(filename)
-    print(f"\n🎉 Training complete for {grid_size} @ fire={fire_spread} | Successes: {SUCCESS}/{episodes}")
-    print(f"✅ Saved Q-table to {filename}")
+    print(f"\n Training complete for {grid_size} @ fire={fire_spread} | Successes: {SUCCESS}/{episodes}")
+    print(f" Saved Q-table to {filename}")
 
 # Train all 6 configs
 if __name__ == "__main__":
